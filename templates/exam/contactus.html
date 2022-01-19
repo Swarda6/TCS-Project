@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <style type="text/css">
+    body {
+     background-image: url("/static/image/Untitled\ design\ \(2\).png");
+     
+   }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+
+</head>
+
+<body>
+
+  {% include "exam/navbar.html" %}
+  <br><br>
+
+
+  <center style="min-height: 555px;" >
+    <h3 style="margin: 30px 0px;color: black;" >Please fillup the form in order to Contact.</h3>
+
+    <form method="POST" autocomplete="off">
+      <!-- Very Important csrf Token -->
+      {% csrf_token %}
+      <div class="form-group">
+        <p>
+        <h4>{{ form.as_p }}</h4>
+        </p>
+        <br>
+        <input type="submit" value="Submit" class='btn btn-primary' style="border-radius: 0%;">
+      </div>
+    </form>
+  </center>
+
+  {% include "exam/footer.html" %}
+</body>
+
+</html>
